@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">  -->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee"
+         version="3.1">
+         
+  <display-name>ParkingLotManagement</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+<servlet>
+ 	<servlet-name>option</servlet-name>
+  	<jsp-file>/options.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>option</servlet-name>
+	<url-pattern>/options</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ 	<servlet-name>checkIn</servlet-name>
+  	<jsp-file>/checkIn.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>checkIn</servlet-name>
+	<url-pattern>/checkIn</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ 	<servlet-name>checkOut</servlet-name>
+  	<jsp-file>/checkOut.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>checkOut</servlet-name>
+	<url-pattern>/checkOut</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ 	<servlet-name>findMyVehicle</servlet-name>
+  	<jsp-file>/findMyVehicle.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>findMyVehicle</servlet-name>
+	<url-pattern>/findMyVehicle</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+ 	<servlet-name>index</servlet-name>
+  	<jsp-file>/index.html</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>index</servlet-name>
+	<url-pattern>/WelcomePage</url-pattern>
+</servlet-mapping>
+
+
+<!-- Logical Implementation starts here -->
+
+<servlet>
+ 	<servlet-name>checkInMethod</servlet-name>
+  	<servlet-class>parkingLotManagement.CheckIn</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>checkInMethod</servlet-name>
+	<url-pattern>/checkInSubmit</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ 	<servlet-name>checkOutMethod</servlet-name>
+  	<servlet-class>parkingLotManagement.CheckOut</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>checkOutMethod</servlet-name>
+	<url-pattern>/checkOutSubmit</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ 	<servlet-name>findMyVehicleMethod</servlet-name>
+  	<servlet-class>parkingLotManagement.FindMyVehicle</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>findMyVehicleMethod</servlet-name>
+	<url-pattern>/findMyVehicleMethod</url-pattern>
+</servlet-mapping>
+
+<servlet>
+ 	<servlet-name>ShowSLotsMethod</servlet-name>
+  	<servlet-class>parkingLotManagement.ShowSlots</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ShowSLotsMethod</servlet-name>
+	<url-pattern>/showSlots</url-pattern>
+</servlet-mapping>
+
+
+</web-app>
