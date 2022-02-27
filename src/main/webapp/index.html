@@ -1,79 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Parking Lot</title>
-	<style type="text/css">
-		body
-		{
-			background-color: #F6F2F2;
-		}
-		#navbar
-		{
-			display: flex;
-  			align-items: center;
-  			justify-content: center;
-		}
-		.navContent
-		{
-			padding:5px;
-		}
-		#WelcomContent
-		{
-	      display: grid;
-		  overflow-wrap: break-word;
-		  grid-template-areas:"welcometitle welcometitle" "lotdetails lotdetails" "welcometable welcometable" "welcomebutton welcomebutton";
-		}
-		.welcometitle
-		{
-			grid-area: welcometitle;
-			text-align: center;
-		}
-		#lotdetailswrap
-		{
-			grid-area: lotdetails;
-			display: flex;
-  			align-items: center;
-  			justify-content: space-evenly;
-		}
-		.lotdetails
-		{
-			text-align: center;
-		}		
-		.welcometable
-		{
-			grid-area: welcometable;
-			margin: 0 30%;
-		}
-		.welcometable table,tr,th,td
-		{
-			padding: 10px;
-		    text-align: center;
-			border: 1px solid black;
-			border-collapse: collapse;
-		}
-		.welcometable img
-		{
-			width: 100px;
-			height: 70px;
-		}
-		#welcomebutton
-		{
-			grid-area: welcomebutton;
-		}
-		.buttonstyle
-		{
-			margin: 2% 47%;
-			background-color: black;
-			border: none;
-			border-radius: 50px;
-			color: white;
-			padding: 11px 20px;
-			text-decoration: none;
-		}
-		.buttonstyle:hover {
-			cursor: pointer;
-		}
-	</style>
+<title>Parking Lot</title>
+<style type="text/css">
+body {
+	background-color: #F6F2F2;
+}
+
+#navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navContent {
+	padding: 5px;
+}
+
+#WelcomContent {
+	display: grid;
+	overflow-wrap: break-word;
+	grid-template-areas: "welcometitle welcometitle" "lotdetails lotdetails"
+		"welcometable welcometable" "welcomebutton welcomebutton";
+}
+
+.welcometitle {
+	grid-area: welcometitle;
+	text-align: center;
+}
+
+#lotdetailswrap {
+	grid-area: lotdetails;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.lotdetails {
+	text-align: center;
+}
+
+.welcometable {
+	grid-area: welcometable;
+	margin: 0 30%;
+}
+
+.welcometable table, tr, th, td {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.welcometable img {
+	width: 100px;
+	height: 70px;
+}
+
+#welcomebutton {
+	grid-area: welcomebutton;
+}
+
+.buttonstyle {
+	margin: 2% 47%;
+	background-color: black;
+	border: none;
+	border-radius: 50px;
+	color: white;
+	padding: 11px 20px;
+	text-decoration: none;
+}
+
+.buttonstyle:hover {
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<nav id="navbar">
@@ -81,25 +82,35 @@
 		<h1 class="navContent">Parking Lot</h1>
 	</nav>
 	<div id="WelcomContent">
-		<div class="welcometitle"><h1>Welcome to Parking</h1></div>
+		<div class="welcometitle">
+			<h1>Welcome to Parking</h1>
+		</div>
 		<span id="lotdetailswrap">
-			<div class="lotdetails"><h4>Total no of floors: 4 (A,B,C,D)</h2></div>
-			<div class="lotdetails"><h4>Total Capacity of all floors:10</h2></div>
-		</span>	
+			<div class="lotdetails">
+				<h4>
+					Total no of floors: 4 (A,B,C,D)
+					</h2>
+			</div>
+			<div class="lotdetails">
+				<h4>
+					Total Capacity of all floors:10
+					</h2>
+			</div>
+		</span>
 		<div class="welcometable">
-			<table style="width:100%">
-			  <tr>
-			    <th>TYPE OF VEHICLE</th>
-			    <th>COST/HOUR</th>
-			  </tr>
-			  <tr>
-			    <td><img src="car.png"></td>
-			    <td>50/hr</td>
-			  </tr>
-			  <tr>
-			    <td><img src="bike.png"></td>
-			    <td>10/hr</td>
-			  </tr>
+			<table style="width: 100%">
+				<tr>
+					<th>TYPE OF VEHICLE</th>
+					<th>COST/HOUR</th>
+				</tr>
+				<tr>
+					<td><img src="car.png"></td>
+					<td>50/hr</td>
+				</tr>
+				<tr>
+					<td><img src="bike.png"></td>
+					<td>10/hr</td>
+				</tr>
 			</table>
 		</div>
 		<div id="welcomebutton">

@@ -64,8 +64,8 @@ body {
 	padding: 10px;
 }
 
-.findMyVehicleTable td {
-	width: 100%;
+#bordernone {
+	border: none;
 }
 
 .checkboximg {
@@ -140,9 +140,10 @@ body {
 			<form method="POST" action="findMyVehicleMethod">
 				<table class="findMyVehicleTable">
 					<tr>
-						<td><label for="vnumber">Vehicle Number</label></td>
-						<td><input type="text" id="vnumber" name="vnumber"
-							required=""></td>
+						<td id="bordernone"><label for="vnumber">Vehicle
+								Number</label></td>
+						<td id="bordernone"><input type="text" id="vnumber"
+							name="vnumber" autocomplete="off" required placeholder="Enter Vehicle number"></td>
 					</tr>
 				</table>
 				<input type="submit" id="submitbutton" class="buttonstyle"
@@ -162,7 +163,9 @@ body {
 							<th>CHECK IN TIME</th>
 							<th>CHECK OUT TIME</th>
 						</tr>
-						<%request.getAttribute("parkingHistory"); %>
+						<%
+						request.getAttribute("parkingHistory");
+						%>
 						<c:forEach var="value" items="${parkingHistory}">
 							<tr>
 								<td>${value[1]}</td>
@@ -175,7 +178,8 @@ body {
 				</c:if>
 				<c:if test="${arrmsg == 0}">
 					<h3 id="parkinghistorytitle">PARKING HISTORY</h3>
-					<p id="parkinghistorytitle" style="color: red">*No parking history available</p>
+					<p id="parkinghistorytitle" style="color: red">*No parking
+						history available</p>
 				</c:if>
 			</div>
 			<div id="inParking">
@@ -197,7 +201,9 @@ body {
 							<th>CHECK IN TIME</th>
 							<th>CHECK OUT TIME</th>
 						</tr>
-						<%request.getAttribute("parkingHistory"); %>
+						<%
+						request.getAttribute("parkingHistory");
+						%>
 						<c:forEach var="value" items="${parkingHistory}">
 							<tr>
 								<td>${value[1]}</td>
@@ -210,7 +216,8 @@ body {
 				</c:if>
 				<c:if test="${arrmsg == 0}">
 					<h3 id="parkinghistorytitle">PARKING HISTORY</h3>
-					<p id="parkinghistorytitle" style="color: red">*No parking history available</p>
+					<p id="parkinghistorytitle" style="color: red">*No parking
+						history available</p>
 				</c:if>
 			</div>
 			<div id="inParking">
