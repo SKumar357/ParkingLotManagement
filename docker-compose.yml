@@ -8,6 +8,7 @@ services:
     container_name: nginx
     depends_on:
         - instance1
+        - instance2
         - Redis
     ports:
       - 80:80
