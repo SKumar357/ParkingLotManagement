@@ -28,7 +28,7 @@ public class CheckIn extends HttpServlet{
 		Booking b = new BookingImpl();
 		ParkingLot p = new ParkingLotImpl();
 
-		if((lotname>='A' && lotname<='E'))
+		if((lotname>='A' && lotname<='D'))
 		{
 			try {
 				message = b.checkIn(p,vnumber,vtype,entrytime,lotname);

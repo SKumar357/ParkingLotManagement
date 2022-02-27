@@ -21,7 +21,7 @@ public class ParkingLotImpl implements ParkingLot{
 	static SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd'T'hh:mm"); // Used to format date(type-1)
 	static SimpleDateFormat formatter1= new SimpleDateFormat("dd/MM/yyy"); // Used to format date(type-2)
 	static SimpleDateFormat formatter2= new SimpleDateFormat("hh:mm a"); // Used to format date(type-3)
-	static String[][] parkinglots = new String[5][10]; // used to store total parking lots
+	static String[][] parkinglots = new String[4][10]; // used to store total parking lots
 	static String[][] parkingHistory = new String[100][5];// used to store history of the cars
 	static String[][] temparray = new String[20][5];//used to temporarily store parkingHistory
 	Jedis j = RedisConnector.getJ();//get the instance of redis connector
@@ -46,7 +46,7 @@ public class ParkingLotImpl implements ParkingLot{
 		}
 		return false;
 	}
-	
+
 	/**
 	 * This function is used to allocate the slot for the vehicle after the ciCheck method
 	 * add the value of the vehicle number and entry time to the pricecache
@@ -141,7 +141,7 @@ public class ParkingLotImpl implements ParkingLot{
 			return ("Vehicle ("+vnum+") is available in "+lot+" \nThe parking duration of :"+Hours+" hours:"+(int)mins+" mins costs Rs.:"+pricetobepaid);
 		}
 	}
-	
+
 	/**
 	 * This function is used to remove the slot for the vehicle after the Check-out is complete
 	 * removes the value of the vehicle number and entry time to the pricecache
@@ -224,10 +224,13 @@ public class ParkingLotImpl implements ParkingLot{
 	 */
 	@Override
 	public String[][] showAvailableSlots() {
-		int acount=0,bcount=0,ccount=0,dcount=0,ecount=0;
+		int acount=0;
+		int bcount=0;
+		int ccount=0;
+		int dcount=0;
 		//Collection<Character> value = freearray.values();
 		Collection<String> value =  j.hvals("freearraycache");
-		String[][] availableSlots = new String[5][4];
+		String[][] availableSlots = new String[4][4];
 		for(String x:value)
 		{
 			if(x.equals("A"))
@@ -246,34 +249,26 @@ public class ParkingLotImpl implements ParkingLot{
 			{
 				dcount++;
 			}
-			if(x.equals("E"))
-			{
-				ecount++;
-			}
 		}
 		availableSlots[0][0]="A";
 		availableSlots[1][0]="B";
 		availableSlots[2][0]="C";
 		availableSlots[3][0]="D";
-		availableSlots[4][0]="E";
 
 		availableSlots[0][1]="10";
 		availableSlots[1][1]="10";
 		availableSlots[2][1]="10";
 		availableSlots[3][1]="10";
-		availableSlots[4][1]="10";
 
 		availableSlots[0][2]=Integer.toString(acount);
 		availableSlots[1][2]=Integer.toString(bcount);
 		availableSlots[2][2]=Integer.toString(ccount);
 		availableSlots[3][2]=Integer.toString(dcount);
-		availableSlots[4][2]=Integer.toString(ecount);
 
 		availableSlots[0][3]=Integer.toString(10-acount);
 		availableSlots[1][3]=Integer.toString(10-bcount);
 		availableSlots[2][3]=Integer.toString(10-ccount);
 		availableSlots[3][3]=Integer.toString(10-dcount);
-		availableSlots[4][3]=Integer.toString(10-ecount);
 
 
 		return availableSlots;
@@ -322,7 +317,7 @@ public class ParkingLotImpl implements ParkingLot{
 	 */
 	@Override
 	public String[][] getParkingHistory(String vnumber) {
-		String[][] temparray = new String[10][5];
+		String[][] temparray = new String[20][5];
 		String[][] finalarray; //to send the array to jsp containing the required count
 		int i=0;
 		int j=0;

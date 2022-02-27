@@ -114,7 +114,7 @@ body {
 					<tr>
 						<td><label for="lot">Enter lot</label></td>
 						<td><input type="text" id="lot" name="lotname"
-							autocomplete="off" required placeholder="Enter lot (A-E)"></td>
+							autocomplete="off" required placeholder="Enter lot (A-D)"></td>
 					</tr>
 					<tr>
 						<td><label for="checkIn">Check in Time</label></td>
